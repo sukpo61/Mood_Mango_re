@@ -14,9 +14,7 @@ const Navbar = () => {
 
   return (
     <StyleNav>
-      <LogoWrap>
-        <img src="./log.png" alt="logo" />
-      </LogoWrap>
+      <LogoWrap>{/* <img src="./log.png" alt="logo" /> */}</LogoWrap>
       <StyleNavWrap>
         <StyleBtnWrap
           onClick={() => {

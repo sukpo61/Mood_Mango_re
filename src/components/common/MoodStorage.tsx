@@ -62,7 +62,7 @@ export class moodStorage {
   static addMangoHistory(param: any) {
     // 내가 들었던 곡
     // 처음 듣는 음악인지 아닌지 찾아보기
-    const [data]: DataType[] = this.mangoHistory.filter(
+    const [data]: DataType[] = this.mangoRank.filter(
       (item) => item.id === param.id
     );
 

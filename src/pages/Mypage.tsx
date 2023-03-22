@@ -22,4 +22,5 @@ const MyPage = styled.div`
   color: white;
   font-size: 40px;
   overflow: hidden;
+  padding-bottom: 90px;
 `;
