@@ -61,7 +61,7 @@ const MusicContainer = ({ data, index, showModal, genre }: any) => {
   };
 
   useEffect(() => {
-    Aos.init();
+    Aos.init({ once: true });
   }, []);
   return (
     <MusicContainerWrap data-aos="fade-in">
