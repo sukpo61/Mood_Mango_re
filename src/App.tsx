@@ -28,9 +28,11 @@ function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    idMap.map((data: any) => {
-      dispatch(getMusic(data));
-    });
+    Promise.all(
+      idMap.map((data: any) => {
+        return dispatch(getMusic(data));
+      })
+    );
   }, []);
 
   return <Routers />;
