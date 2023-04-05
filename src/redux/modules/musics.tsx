@@ -18,12 +18,13 @@ export const getMusic = createAsyncThunk(
     try {
       let finaldata = [];
       const data = await axios.get(playlistApi(payload.playlistId));
+      console.log(data);
+
       for (let listvideodata of data.data.items) {
         const videoid = listvideodata.contentDetails.videoId;
         const videodata = await axios.get(videoApi(videoid));
         finaldata.push(videodata.data.items[0]);
       }
-      console.log(finaldata);
 
       let filteredData = DataFilter(finaldata);
 
@@ -78,7 +79,6 @@ const todosSlice = createSlice({
     builder.addCase(getMusic.fulfilled, (state, action) => {
       state.isLoading = false;
       let location = action.payload.location;
-      console.log(action.payload.filteredData);
       state[location] = action.payload.filteredData;
     });
     builder.addCase(getMusic.rejected, (state, action) => {
